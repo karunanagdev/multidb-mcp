@@ -71,14 +71,6 @@ def get_all_cargo():
         FROM cargo
     """)
 
-def get_vessels_by_type_without_param(vessel_type):
-
-    return db.query(f"""
-        SELECT *
-        FROM vessels
-        WHERE vessel_type = '{vessel_type}'
-    """)
-
 def get_vessels_by_type(vessel_type):
 
     sql = """
@@ -176,7 +168,7 @@ def add_voyage(
     VALUES (?, ?, ?, ?, ?, ?)
     """
 
-    return db.execute(
+    return db.insert(
         sql,
         (
             vessel_id,
@@ -198,7 +190,7 @@ def update_voyage_status(voyage_id, status):
     WHERE voyage_id = ?
     """
 
-    return db.execute(
+    return db.update(
         sql,
         (status, voyage_id)
     )
@@ -210,7 +202,7 @@ def delete_voyage(voyage_id):
     WHERE voyage_id = ?
     """
 
-    rows = db.execute(sql, (voyage_id,))
+    rows = db.delete(sql, (voyage_id,))
 
     if rows == 0:
         return f"Voyage {voyage_id} not found."
@@ -228,15 +220,33 @@ def create_voyage_with_cargo(
     weight_tons
 ):
 
-    conn = db.get_connection()
+    validate_status(status)
 
     try:
 
-        cursor = conn.cursor()
+        logger.info("Creating voyage with cargo...")
 
+        # Start transaction
+        db.begin()
+
+        # -------------------------
         # Insert Voyage
-        cursor.execute("""
-            INSERT INTO voyages(
+        # -------------------------
+        voyage_sql = """
+        INSERT INTO voyages (
+            vessel_id,
+            departure_port_id,
+            arrival_port_id,
+            departure_date,
+            arrival_date,
+            status
+        )
+        VALUES (?, ?, ?, ?, ?, ?)
+        """
+
+        cursor = db.execute_sql(
+            voyage_sql,
+            (
                 vessel_id,
                 departure_port_id,
                 arrival_port_id,
@@ -244,43 +254,48 @@ def create_voyage_with_cargo(
                 arrival_date,
                 status
             )
-            VALUES (?, ?, ?, ?, ?, ?)
-        """, (
-            vessel_id,
-            departure_port_id,
-            arrival_port_id,
-            departure_date,
-            arrival_date,
-            status
-        ))
+        )
 
-        # Get newly created voyage_id
+        # Get newly created voyage ID
         voyage_id = cursor.lastrowid
 
+        logger.info(f"New Voyage ID : {voyage_id}")
+
+        # -------------------------
         # Insert Cargo
-        cursor.execute("""
-            INSERT INTO cargo(
+        # -------------------------
+        cargo_sql = """
+        INSERT INTO cargo (
+            voyage_id,
+            cargo_type,
+            weight_tons
+        )
+        VALUES (?, ?, ?)
+        """
+
+        db.execute_sql(
+            cargo_sql,
+            (
                 voyage_id,
                 cargo_type,
                 weight_tons
             )
-            VALUES (?, ?, ?)
-        """, (
-            voyage_id,
-            cargo_type,
-            weight_tons
-        ))
+        )
 
-        conn.commit()
+        # Commit transaction
+        db.commit()
 
-        logger.info("Voyage and Cargo created successfully.")
+        logger.info("Transaction committed successfully.")
 
-        return voyage_id
+        return {
+            "message": "Voyage and Cargo created successfully.",
+            "voyage_id": voyage_id
+        }
 
     except Exception as e:
 
-        conn.rollback()
+        db.rollback()
 
-        logger.error(e)
+        logger.error(f"Transaction failed: {e}")
 
         raise

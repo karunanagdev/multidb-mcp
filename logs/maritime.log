@@ -125,3 +125,58 @@
         FROM cargo
     
 2026-07-12 14:22:06,371 | INFO | None
+2026-07-12 15:19:56,874 | INFO | Creating voyage with cargo...
+2026-07-12 15:19:56,874 | INFO | BEGIN TRANSACTION
+2026-07-12 15:19:56,892 | INFO | New Voyage ID : 109
+2026-07-12 15:19:56,892 | INFO | COMMIT
+2026-07-12 15:19:56,895 | INFO | Transaction committed successfully.
+2026-07-12 15:20:09,123 | INFO | Executing SELECT
+2026-07-12 15:20:09,124 | INFO | 
+        SELECT *
+        FROM voyages
+    
+2026-07-12 15:20:09,124 | INFO | None
+2026-07-12 15:20:22,549 | INFO | Executing SELECT
+2026-07-12 15:20:22,550 | INFO | 
+        SELECT *
+        FROM cargo
+    
+2026-07-12 15:20:22,550 | INFO | None
+2026-07-12 15:26:35,964 | INFO | Executing SELECT
+2026-07-12 15:26:35,965 | INFO | PRAGMA foreign_keys;
+2026-07-12 15:26:35,965 | INFO | None
+2026-07-12 15:27:01,813 | INFO | Executing SELECT
+2026-07-12 15:27:01,814 | INFO | PRAGMA foreign_keys;
+2026-07-12 15:27:01,814 | INFO | None
+2026-07-12 15:27:01,818 | INFO | Executing SELECT
+2026-07-12 15:27:01,818 | INFO | PRAGMA foreign_key_list(voyages);
+2026-07-12 15:27:01,818 | INFO | None
+2026-07-12 15:27:01,836 | INFO | Executing SELECT
+2026-07-12 15:27:01,836 | INFO | PRAGMA foreign_key_list(cargo);
+2026-07-12 15:27:01,836 | INFO | None
+2026-07-12 15:32:11,730 | INFO | Executing SELECT
+2026-07-12 15:32:11,731 | INFO | 
+        SELECT *
+        FROM voyages
+    
+2026-07-12 15:32:11,731 | INFO | None
+2026-07-12 15:32:17,454 | INFO | Executing SELECT
+2026-07-12 15:32:17,454 | INFO | 
+        SELECT *
+        FROM voyages
+        WHERE status = 'Active'
+    
+2026-07-12 15:32:17,454 | INFO | None
+2026-07-12 15:32:28,311 | INFO | Executing INSERT/UPDATE/DELETE
+2026-07-12 15:32:28,312 | INFO | 
+    DELETE FROM voyages
+    WHERE voyage_id = ?
+    
+2026-07-12 15:32:28,312 | INFO | (109,)
+2026-07-12 15:32:28,320 | INFO | COMMIT
+2026-07-12 15:32:33,276 | INFO | Executing SELECT
+2026-07-12 15:32:33,276 | INFO | 
+        SELECT *
+        FROM voyages
+    
+2026-07-12 15:32:33,276 | INFO | None

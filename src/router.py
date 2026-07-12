@@ -85,6 +85,23 @@ def execute_command(question):
 
         except (IndexError, ValueError):
             return "Usage: delete voyage <voyage_id>"
+        
+    elif question == "create sample voyage":
+
+        return create_voyage_with_cargo(
+
+            vessel_id=1,
+            departure_port_id=1,
+            arrival_port_id=2,
+            departure_date="2026-07-15",
+            arrival_date="2026-07-25",
+            status="Active",
+
+            cargo_type="Coal",
+
+            weight_tons=5000
+
+        )
     # Fixed commands
     elif question in ROUTES:
 
