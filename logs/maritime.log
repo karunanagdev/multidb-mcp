@@ -1,0 +1,127 @@
+2026-07-01 19:48:12,300 | INFO | Executing SELECT
+2026-07-01 19:48:12,301 | INFO | 
+        SELECT *
+        FROM ports
+    
+2026-07-01 19:48:12,302 | INFO | None
+2026-07-01 19:53:46,843 | INFO | Executing SELECT
+2026-07-01 19:53:46,843 | INFO | 
+    SELECT * FROM unknown_table;
+
+2026-07-01 19:53:46,843 | INFO | None
+2026-07-01 19:53:46,843 | ERROR | Execution failed on sql '
+    SELECT * FROM unknown_table;
+': no such table: unknown_table
+2026-07-04 15:50:16,441 | INFO | Executing INSERT/UPDATE/DELETE
+2026-07-04 15:50:16,442 | INFO | 
+    UPDATE voyages
+    SET status = ?
+    WHERE voyage_id = ?
+    
+2026-07-04 15:50:16,442 | INFO | ('Completed', 1)
+2026-07-04 15:51:49,293 | INFO | Executing SELECT
+2026-07-04 15:51:49,295 | INFO | 
+    SELECT * FROM voyages;
+
+
+2026-07-04 15:51:49,295 | INFO | None
+2026-07-04 15:52:17,888 | INFO | Executing INSERT/UPDATE/DELETE
+2026-07-04 15:52:17,888 | INFO | 
+    UPDATE voyages
+    SET status = ?
+    WHERE voyage_id = ?
+    
+2026-07-04 15:52:17,888 | INFO | ('Completed', 105)
+2026-07-04 15:52:49,085 | INFO | Executing SELECT
+2026-07-04 15:52:49,085 | INFO | 
+    SELECT * FROM voyages;
+
+
+2026-07-04 15:52:49,085 | INFO | None
+2026-07-04 15:54:51,644 | INFO | Executing SELECT
+2026-07-04 15:54:51,645 | INFO | 
+    SELECT * FROM voyages;
+
+
+2026-07-04 15:54:51,645 | INFO | None
+2026-07-04 15:58:24,034 | INFO | Executing INSERT/UPDATE/DELETE
+2026-07-04 15:58:24,035 | INFO | 
+    UPDATE voyages
+    SET status = ?
+    WHERE voyage_id = ?
+    
+2026-07-04 15:58:24,035 | INFO | ('Scheduled', 105)
+2026-07-04 15:58:36,756 | INFO | Executing SELECT
+2026-07-04 15:58:36,756 | INFO | 
+    SELECT * FROM voyages;
+
+
+2026-07-04 15:58:36,756 | INFO | None
+2026-07-04 15:59:44,057 | INFO | Executing SELECT
+2026-07-04 15:59:44,058 | INFO | 
+    SELECT * FROM voyages;
+
+
+2026-07-04 15:59:44,058 | INFO | None
+2026-07-12 14:11:10,788 | INFO | Executing SELECT
+2026-07-12 14:11:10,799 | INFO | 
+        SELECT *
+        FROM voyages
+    
+2026-07-12 14:11:10,799 | INFO | None
+2026-07-12 14:11:34,825 | INFO | Executing INSERT/UPDATE/DELETE
+2026-07-12 14:11:34,826 | INFO | 
+    DELETE FROM voyages
+    WHERE voyage_id = ?
+    
+2026-07-12 14:11:34,826 | INFO | (105,)
+2026-07-12 14:11:40,519 | INFO | Executing SELECT
+2026-07-12 14:11:40,519 | INFO | 
+        SELECT *
+        FROM voyages
+    
+2026-07-12 14:11:40,519 | INFO | None
+2026-07-12 14:11:55,682 | INFO | Executing INSERT/UPDATE/DELETE
+2026-07-12 14:11:55,682 | INFO | 
+    DELETE FROM voyages
+    WHERE voyage_id = ?
+    
+2026-07-12 14:11:55,683 | INFO | (9999,)
+2026-07-12 14:19:53,299 | INFO | Executing SELECT
+2026-07-12 14:19:53,299 | INFO | 
+        SELECT *
+        FROM voyages
+    
+2026-07-12 14:19:53,299 | INFO | None
+2026-07-12 14:19:58,623 | INFO | Executing SELECT
+2026-07-12 14:19:58,624 | INFO | 
+        SELECT *
+        FROM cargo
+    
+2026-07-12 14:19:58,624 | INFO | None
+2026-07-12 14:20:09,790 | INFO | Voyage and Cargo created successfully.
+2026-07-12 14:20:19,102 | INFO | Executing SELECT
+2026-07-12 14:20:19,103 | INFO | 
+        SELECT *
+        FROM voyages
+    
+2026-07-12 14:20:19,103 | INFO | None
+2026-07-12 14:20:23,792 | INFO | Executing SELECT
+2026-07-12 14:20:23,793 | INFO | 
+        SELECT *
+        FROM cargo
+    
+2026-07-12 14:20:23,793 | INFO | None
+2026-07-12 14:21:20,070 | INFO | Voyage and Cargo created successfully.
+2026-07-12 14:22:02,484 | INFO | Executing SELECT
+2026-07-12 14:22:02,485 | INFO | 
+        SELECT *
+        FROM voyages
+    
+2026-07-12 14:22:02,485 | INFO | None
+2026-07-12 14:22:06,371 | INFO | Executing SELECT
+2026-07-12 14:22:06,371 | INFO | 
+        SELECT *
+        FROM cargo
+    
+2026-07-12 14:22:06,371 | INFO | None
