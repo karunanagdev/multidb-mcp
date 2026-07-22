@@ -42,9 +42,15 @@ fastmcp version
 
 ## Run MCP Server
 
+Check version
+
+Use:
+
+python .venv\Scripts\fastmcp.exe version
 
 fastmcp run src/mcp_server.py
-
+or
+python .venv\Scripts\fastmcp.exe run src/mcp_server.py
 
 
 Expected:
@@ -58,7 +64,8 @@ Uvicorn running on http://127.0.0.1:8000
 
 
 fastmcp inspect src/mcp_server.py
-
+or
+python .venv\Scripts\fastmcp.exe inspect src/mcp_server.py
 
 
 Expected:

@@ -219,3 +219,4 @@
 2026-07-19 15:30:11,820 | INFO | Processing request of type ListResourcesRequest
 2026-07-19 15:30:11,820 | INFO | Processing request of type ListResourceTemplatesRequest
 2026-07-19 15:33:07,748 | INFO | StreamableHTTP session manager started
+2026-07-22 18:40:54,622 | INFO | StreamableHTTP session manager shutting down

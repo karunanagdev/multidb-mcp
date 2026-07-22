@@ -1,12 +1,13 @@
 from mcp.server.fastmcp import FastMCP
-from maritime_service import get_all_ports
+from services.port_service import PortService
 
 mcp = FastMCP("Maritime MCP Server")
+port_service = PortService()
 
 
 @mcp.tool()
 def show_ports():
-    return get_all_ports().to_string(index=False)
+    return port_service.show_ports()
 
 
 if __name__ == "__main__":
