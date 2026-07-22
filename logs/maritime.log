@@ -180,3 +180,42 @@
         FROM voyages
     
 2026-07-12 15:32:33,276 | INFO | None
+2026-07-12 15:42:58,793 | INFO | Executing SELECT
+2026-07-12 15:42:58,794 | INFO | 
+        SELECT *
+        FROM ports
+    
+2026-07-12 15:42:58,795 | INFO | None
+2026-07-12 15:43:02,897 | INFO | Executing SELECT
+2026-07-12 15:43:02,897 | INFO | 
+        SELECT *
+        FROM vessels
+    
+2026-07-12 15:43:02,898 | INFO | None
+2026-07-12 15:43:09,323 | INFO | Executing SELECT
+2026-07-12 15:43:09,324 | INFO | 
+        SELECT *
+        FROM cargo
+    
+2026-07-12 15:43:09,324 | INFO | None
+2026-07-12 15:43:17,373 | INFO | Executing SELECT
+2026-07-12 15:43:17,373 | INFO | 
+        SELECT *
+        FROM voyages
+        WHERE status = 'Active'
+    
+2026-07-12 15:43:17,374 | INFO | None
+2026-07-18 15:32:02,805 | INFO | Processing request of type ListToolsRequest
+2026-07-18 15:32:02,814 | INFO | Processing request of type ListPromptsRequest
+2026-07-18 15:32:02,814 | INFO | Processing request of type ListResourcesRequest
+2026-07-18 15:32:02,815 | INFO | Processing request of type ListResourceTemplatesRequest
+2026-07-18 15:33:51,189 | INFO | StreamableHTTP session manager started
+2026-07-18 15:54:49,913 | INFO | StreamableHTTP session manager started
+2026-07-18 15:54:49,915 | INFO | StreamableHTTP session manager shutting down
+2026-07-18 15:57:02,464 | INFO | StreamableHTTP session manager started
+2026-07-18 15:58:31,892 | INFO | StreamableHTTP session manager shutting down
+2026-07-19 15:30:11,816 | INFO | Processing request of type ListToolsRequest
+2026-07-19 15:30:11,819 | INFO | Processing request of type ListPromptsRequest
+2026-07-19 15:30:11,820 | INFO | Processing request of type ListResourcesRequest
+2026-07-19 15:30:11,820 | INFO | Processing request of type ListResourceTemplatesRequest
+2026-07-19 15:33:07,748 | INFO | StreamableHTTP session manager started
