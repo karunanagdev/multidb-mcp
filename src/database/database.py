@@ -14,9 +14,10 @@ class Database:
         self.connection = sqlite3.connect(db_path)
 
 
-    def query(self, sql):
+    def query(self, sql, params=None):
 
         return pd.read_sql_query(
             sql,
-            self.connection
+            self.connection,
+            params=params
         )

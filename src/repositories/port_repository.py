@@ -15,3 +15,16 @@ class PortRepository:
         """
 
         return self.db.query(query)
+    
+    def get_ports_by_country(self, country):
+
+        query = """
+        SELECT *
+        FROM ports
+        WHERE country = ?
+        """
+
+        return self.db.query(
+            query,
+            (country,)
+        )
